@@ -1,8 +1,8 @@
-
+import { PrismaClient } from '@prisma/client'
 
 import pg from 'pg'
 
-
+const prisma = new PrismaClient()
 const {Pool}= pg
 
 const database = new Pool({
