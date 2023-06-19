@@ -1,9 +1,8 @@
 import { PrismaClient } from '@prisma/client'
 
-import pg from 'pg'
 
 const prisma = new PrismaClient()
-const {Pool}= pg
+/*const {Pool}= pg
 
 const database = new Pool({
 host: 'localhost',
@@ -13,4 +12,6 @@ password: 'caneta',
 database: 'test02'
 })
 
-export {database};
+export {database};*/
+
+export default prisma
