@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { Request,Response } from "express";
-import repositories from "../repositories/repositories.js";
+import repositories from "../repositories/repositories";
 
 const router = Router()
 

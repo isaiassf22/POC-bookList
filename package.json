@@ -1,11 +1,11 @@
  {
   "name": "teste-mil",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon dist/src/index.js"
+    "start": "nodemon dist/src/index.js",
+    "dev":"nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
