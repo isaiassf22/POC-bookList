@@ -1,18 +1,17 @@
 import { Router } from "express";
 import { Request,Response } from "express";
-import repositories from "../repositories/repositories";
+import bookController from "@/controller/bookController";
 
-const router = Router()
+const BookRouter = Router()
 
-router.get('/check/:id',(req: Request, res: Response)=>{
-    const {id}=req.params
-    res.send(id)
-})
-
-router.post('/costumers',repositories.addCostumers)
-router.get('/costumers',repositories.getCostumers)
+BookRouter.get('/book',bookController.getAll)
+BookRouter.get("/book/:id",bookController.getById)
+BookRouter.post("/book",bookController.create)
+BookRouter.put("/book/:id",bookController.updateBook)
+BookRouter.delete("/book/:id",bookController.deleteBook)
 
 
 
-export default router
+
+export default BookRouter
 

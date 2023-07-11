@@ -7,8 +7,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model costumers {
-  id    Int     @id @default(autoincrement())
-  name  String? @db.VarChar(30)
-  phone String? @db.VarChar(11)
+model customers {
+  id                    Int                     @id @default(autoincrement())
+  user                  String                  @db.VarChar(15)
+  email                 String?
+  password              String?
+  customer_informations customer_informations[]
+  token_list            token_list[]
+}
+
+model token_list {
+  token_id              Int                     @id @default(autoincrement())
+  id_user               Int
+  token                 String?
+  customer_informations customer_informations[]
+  customers             customers               @relation(fields: [id_user], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model customer_informations {
+  id         Int        @unique @default(autoincrement())
+  id_user    Int
+  token_id   Int
+  name       String?
+  number     String?    @db.VarChar(12)
+  state      String?
+  city       String?
+  cep        String?    @db.VarChar(10)
+  customers  customers  @relation(fields: [id_user], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  token_list token_list @relation(fields: [token_id], references: [token_id], onDelete: NoAction, onUpdate: NoAction)
 }

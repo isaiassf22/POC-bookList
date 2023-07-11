@@ -1,11 +1,11 @@
- {
+{
   "name": "teste-mil",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon dist/src/index.js",
-    "dev":"nodemon src/index.ts"
+    "dev": "nodemon -r tsconfig-paths/register ./src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +13,12 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "http-status": "^1.6.2",
+    "joi": "^17.9.2",
     "pg": "^8.11.0",
-    "typescript": "^5.1.3"
+    "typescript": "^5.1.3",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@prisma/client": "^4.15.0",
@@ -24,6 +28,7 @@
     "dotenv": "^16.1.4",
     "nodemon": "^2.0.22",
     "prisma": "^4.15.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
   }
 }
