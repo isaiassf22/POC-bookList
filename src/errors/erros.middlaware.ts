@@ -1,7 +1,7 @@
 function invalidBody(){
     return{
         type:"invalidSintax",
-        message:"it's information  not in the format, please try again."
+        message:"this information it's not in the format, please try again."
     }
 }
 
